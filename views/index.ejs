@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Tools</title>
+    <link rel="icon" type="image/x-icon" href="/logo.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar" onclick="openPage('.container-tools')">
+      <img src="/logo.png" style="width: 50px; height: 50px" />
+      <div class="logo-text">Youtube Tools</div>
+      <i class="fas fa-home"></i>
+    </nav>
+    <div class="container">
+      <!-- page 1 -->
+      <div class="container-block container-tools container-active">
+        <div>Choose a Tool</div>
+        <div class="inner-container">
+          <div class="card" onclick="openPage('.container-simple-tools')">
+            Simple Tools
+          </div>
+          <div class="card" onclick="openPage('.container-advance-tools')">
+            Advance Tools (Coming Soon)
+          </div>
+        </div>
+      </div>
+      <!-- page 2 : simple -->
+      <div class="container-block container-simple-tools">
+        <div class="inner-container">
+          <div class="card card-back" onclick="openPage('.container-tools')">
+            <i class="fas fa-arrow-left"> Back</i>
+          </div>
+          <div
+            class="card"
+            onclick="openPage('.container-random-comment-picker')"
+          >
+            Random Comment Picker
+          </div>
+          <div class="card" onclick="openPage('.container-comment-search')">
+            Search comments
+          </div>
+          <div class="card" onclick="openPage('.container-captions')">
+            Video Captions List
+          </div>
+        </div>
+      </div>
+      <!-- Page 3 : Random Comment Picker -->
+      <div class="container-block container-random-comment-picker">
+        <div class="thumbnail">
+          <img src="" sizes="80 80" />
+          <p>Title</p>
+        </div>
+        <input
+          class="url-input"
+          placeholder="Paste youtube video url here"
+          onkeyup="ShowThumbnail(this.parentElement)"
+        />
+        <input class="tag-input" placeholder="Enter #tag to filter comments" />
+        <div class="inner-container">
+          <div
+            class="card card-back"
+            onclick="openPage('.container-simple-tools')"
+          >
+            <i class="fas fa-arrow-left"> Back</i>
+          </div>
+          <div
+            class="card"
+            onclick="showRandomCommentResult(this.parentElement.parentElement)"
+          >
+            PICK
+          </div>
+        </div>
+        <div class="result-comments"></div>
+      </div>
+      <!-- Page 3 : Comment Search -->
+      <div class="container-block container-comment-search">
+        <div class="thumbnail">
+          <img src="" sizes="80 80" />
+          <p>Title</p>
+        </div>
+        <input
+          class="url-input"
+          placeholder="Paste youtube video url here"
+          onkeyup="ShowThumbnail(this.parentElement)"
+        />
+        <div class="tag-options">
+          <p>Search By</p>
+          <div>
+            <input
+              type="radio"
+              id="tag-option-keyword"
+              name="tag-option"
+              value="keyword"
+              checked
+            />
+            <label for="tag-option-keyword">keyword</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="tag-option-user"
+              name="tag-option"
+              value="user"
+            />
+            <label for="tag-option-user">user</label>
+          </div>
+        </div>
+        <input class="tag-input" placeholder="Enter a keyword or user's name" />
+        <div class="inner-container">
+          <div
+            class="card card-back"
+            onclick="openPage('.container-simple-tools')"
+          >
+            <i class="fas fa-arrow-left"> Back</i>
+          </div>
+          <div
+            class="card"
+            onclick="showCommentSearchResult(this.parentElement.parentElement)"
+          >
+            FIND
+          </div>
+        </div>
+        <div class="result-comments"></div>
+      </div>
+
+      <!-- Page 3 : Captions Viewer -->
+      <div class="container-block container-captions">
+        <div class="thumbnail">
+          <img src="" sizes="80 80" />
+          <p>Title</p>
+        </div>
+        <input
+          class="url-input"
+          placeholder="Paste youtube video url here"
+          onkeyup="ShowThumbnail(this.parentElement)"
+        />
+        <div class="inner-container">
+          <div
+            class="card card-back"
+            onclick="openPage('.container-simple-tools')"
+          >
+            <i class="fas fa-arrow-left"> Back</i>
+          </div>
+          <div
+            class="card"
+            onclick="showCaption(this.parentElement.parentElement)"
+          >
+            GET
+          </div>
+        </div>
+        <div class="result-comments">
+          <div class=""></div>
+        </div>
+      </div>
+
+      <!-- page 2 : advance -->
+      <div class="container-block container-advance-tools">
+        <div class="inner-container">
+          <div class="card card-back" onclick="openPage('.container-tools')">
+            <i class="fas fa-arrow-left"> Back</i>
+          </div>
+          <div class="card">Multiple Video Commenter (Coming Soon)</div>
+          <div class="card">First Liker and Commenter (Coming Soon)</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
